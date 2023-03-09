@@ -5,11 +5,14 @@ export const Login = (props) => {
     const [pass, setPass] = useState('');
 
     const handleSubmit = (e) => {
-        e.preventDefault();
+        e.preventDefault();//submitting a form will cause the page to refresh, we can stop that by calling e.preventDefault()
         console.log(email);
     }
+    //handle the submission of a form, by stopping the refresh of the form submission 
+    //and then logging data to the console to updating state variables
 
     return (
+        //login form
         <div className="auth-form-container">
             <h2>Login</h2>
             <form className="login-form" onSubmit={handleSubmit}>
