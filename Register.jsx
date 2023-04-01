@@ -11,16 +11,16 @@ export const Register = (props) => {
     }
 
     return (
-        <div className="auth-form-container">
+        <div className="register-form">
             <h2>Register</h2>
-        <form className="register-form" onSubmit={handleSubmit}>
+        <form className="auth-form-container" onSubmit={handleSubmit}>
             <label htmlFor="name">Full name</label>
             <input value={name} name="name" onChange={(e) => setName(e.target.value)} id="name" placeholder="full Name" />
             <label htmlFor="email">Email</label>
             <input value={email} onChange={(e) => setEmail(e.target.value)}type="email" placeholder="youremail@gmail.com" id="email" name="email" />
             <label htmlFor="password">Password</label>
             <input value={pass} onChange={(e) => setPass(e.target.value)} type="password" placeholder="********" id="password" name="password" />
-            <button type="submit">Log In</button>
+            <button type="submit" onClick={() => props.onFormSwitch('ProfileCreation')}>Continue</button>
         </form>
         <button className="link-btn" onClick={() => props.onFormSwitch('login')}>Already have an account? Login here.</button>
     </div>
